@@ -6,7 +6,7 @@ namespace: dev
 resources:
 - ../../base/frontend
 - ../../base/backend
-- ../../base/orders
+
 patches:
 - target:
     kind: Deployment
