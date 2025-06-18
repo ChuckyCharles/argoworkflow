@@ -1,0 +1,15 @@
+# argoworkflow/apps/base/orders/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-backend-service
+  labels:
+    app: orders
+spec:
+  selector:
+    app: orders
+  ports:
+    - protocol: TCP
+      port: 80 # The port this service will expose
+      targetPort: 8080 # The port of the container (matches deployment.yaml)
+  type: ClusterIP # Use ClusterIP for internal services, NodePort or LoadBalancer for external access
