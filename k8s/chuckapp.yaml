@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chucky-app
+  labels:
+    app: chucky-app
+spec:
+  replicas: 1 # Start with 1 replica, you can scale later
+  selector:
+    matchLabels:
+      app: chucky-app
+  template:
+    metadata:
+      labels:
+        app: chucky-app
+    spec:
+      containers:
+      - name: chucky-container
+        image: chuck42chuck/chucky:latest 
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always 
